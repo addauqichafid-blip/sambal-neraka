@@ -1,0 +1,684 @@
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Sambal Neraka - Sensasi pedas dengan cita rasa khas Nusantara.">
+<title>SAMBAL NERAKA | Premium Sambal</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+<style>
+:root{
+ --red:#c41220;
+ --dark:#100b0c;
+ --black:#080708;
+ --gold:#d5a44b;
+ --white:#fff;
+ --muted:#aaa;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+ font-family:Montserrat,Arial,sans-serif;
+ background:var(--black);
+ color:white;
+ overflow-x:hidden;
+}
+a{text-decoration:none;color:inherit}
+
+/* NAVBAR */
+nav{
+ position:fixed;top:0;width:100%;z-index:100;
+ display:flex;justify-content:space-between;
+ align-items:center;padding:20px 8%;
+ background:#080708ed;
+ backdrop-filter:blur(15px);
+ border-bottom:1px solid #ffffff15;
+}
+.logo{font-size:21px;font-weight:900;letter-spacing:2px}
+.logo span{color:var(--red)}
+.nav-links{display:flex;gap:25px;align-items:center}
+.nav-links a{font-size:11px;color:#ddd;font-weight:700}
+.nav-links a:hover{color:var(--gold)}
+.nav-order{background:var(--red);padding:12px 18px;color:white!important}
+.menu-toggle{
+ display:none;background:none;color:white;
+ border:0;font-size:25px;cursor:pointer;
+}
+
+/* HERO */
+.hero{
+ min-height:750px;display:flex;align-items:center;
+ padding:150px 10% 100px;
+ position:relative;
+ background:
+ linear-gradient(90deg,#080708 5%,#100708eF 50%,#10070870),
+ url("https://images.unsplash.com/photo-1601050690597-df0568f70950?w=1800")
+ center/cover;
+}
+.hero-content{max-width:650px;z-index:2}
+.tag{
+ color:var(--gold);font-size:11px;
+ letter-spacing:4px;font-weight:800;
+ margin-bottom:25px;
+}
+.hero h1{
+ font-size:clamp(45px,7vw,85px);
+ font-weight:900;line-height:1.04;
+}
+.hero h1 span{color:var(--red)}
+.hero p{
+ margin-top:25px;color:#c6bfc0;
+ max-width:480px;line-height:1.9;font-size:14px;
+}
+.hero-buttons{display:flex;gap:15px;margin-top:35px;flex-wrap:wrap}
+.btn{
+ padding:16px 25px;font-size:11px;
+ font-weight:800;letter-spacing:1px;
+ display:inline-block;transition:.3s;
+}
+.btn-red{background:var(--red);color:white}
+.btn-red:hover{background:#ed2635;transform:translateY(-3px)}
+.btn-outline{border:1px solid #ffffff50}
+.btn-outline:hover{border-color:var(--gold);color:var(--gold)}
+
+/* GENERAL */
+section{padding:100px 10%}
+.section-label{
+ color:var(--gold);font-size:11px;
+ letter-spacing:4px;font-weight:800;
+}
+.section-title{
+ font-size:clamp(30px,4vw,48px);
+ font-weight:900;margin-top:15px;line-height:1.2;
+}
+.section-desc{
+ color:var(--muted);line-height:1.9;
+ font-size:13px;margin-top:18px;max-width:600px;
+}
+.center{text-align:center}
+.center .section-desc{margin:18px auto}
+
+/* ABOUT */
+.about{
+ display:grid;grid-template-columns:1fr 1fr;
+ gap:70px;align-items:center;background:#100b0c;
+}
+.about-image{
+ min-height:430px;border-radius:5px;
+ background:
+ linear-gradient(0deg,#0008,#0001),
+ url("https://images.unsplash.com/photo-1547592180-85f173990554?w=1000")
+ center/cover;
+}
+.about-text h2 span{color:var(--red)}
+.about-text p{
+ color:var(--muted);font-size:13px;
+ line-height:2;margin-top:20px;
+}
+.stats{display:flex;gap:35px;margin-top:35px}
+.stat strong{display:block;color:var(--gold);font-size:27px}
+.stat small{color:var(--muted);font-size:10px}
+
+/* PRODUCTS */
+.products{background:#090708}
+.product-grid{
+ display:grid;grid-template-columns:repeat(3,1fr);
+ gap:25px;margin-top:50px;
+}
+.product-card{
+ background:#151011;border:1px solid #ffffff12;
+ transition:.3s;overflow:hidden;
+}
+.product-card:hover{
+ transform:translateY(-8px);border-color:var(--red);
+}
+.product-photo{
+ height:250px;overflow:hidden;
+ background:linear-gradient(145deg,#301014,#12090a);
+}
+.product-photo img{
+ width:100%;height:100%;object-fit:cover;
+ transition:.5s;
+}
+.product-card:hover img{transform:scale(1.08)}
+.product-info{padding:25px}
+.product-info h3{font-size:18px}
+.product-info p{
+ color:var(--muted);font-size:12px;
+ line-height:1.8;margin-top:12px;
+}
+.product-bottom{
+ display:flex;justify-content:space-between;
+ align-items:center;margin-top:22px;
+}
+.price{color:var(--gold);font-weight:800;font-size:14px}
+.product-bottom a{
+ color:white;background:var(--red);
+ padding:10px 14px;font-size:10px;font-weight:800;
+}
+
+/* FEATURES */
+.why{background:#110b0d}
+.features{
+ display:grid;grid-template-columns:repeat(3,1fr);
+ gap:30px;margin-top:50px;
+}
+.feature{
+ padding:35px 25px;border:1px solid #ffffff15;
+ background:#ffffff04;
+}
+.feature .icon{font-size:35px}
+.feature h3{margin:20px 0 12px;font-size:16px}
+.feature p{font-size:12px;color:var(--muted);line-height:1.9}
+
+/* GALLERY */
+.gallery{background:#090708}
+.gallery-grid{
+ display:grid;grid-template-columns:repeat(3,1fr);
+ gap:15px;margin-top:40px;
+}
+.gallery-grid img{
+ width:100%;height:250px;object-fit:cover;
+ filter:brightness(.8);transition:.3s;
+}
+.gallery-grid img:hover{filter:brightness(1)}
+
+/* LOCATION + MAP */
+.location{
+ background:#100b0c;
+ text-align:center;
+}
+.map-container{
+ margin:40px auto 0;
+ max-width:1000px;
+ border:1px solid #d5a44b55;
+ border-radius:12px;
+ overflow:hidden;
+ background:#171112;
+}
+.map-container iframe{
+ width:100%;height:400px;
+ border:0;display:block;
+}
+.map-info{
+ padding:22px;
+ display:flex;justify-content:space-between;
+ align-items:center;gap:20px;flex-wrap:wrap;
+ text-align:left;
+}
+.map-info p{
+ color:#ccc;font-size:13px;line-height:1.8;
+}
+.map-info a{
+ color:var(--gold);font-size:12px;font-weight:800;
+}
+
+/* ORDER */
+.order-section{
+ background:linear-gradient(135deg,#23080c,#080708);
+}
+.order-wrapper{
+ max-width:750px;margin:40px auto 0;
+ padding:35px;background:#151011;
+ border:1px solid #d5a44b55;
+ border-radius:12px;
+ box-shadow:0 15px 50px #0008;
+}
+.order-wrapper h3{font-size:23px;margin-bottom:8px}
+.order-subtitle{
+ color:#aaa;font-size:12px;
+ margin-bottom:28px;line-height:1.8;
+}
+.form-group{margin-bottom:20px}
+.form-group label{
+ display:block;margin-bottom:9px;
+ font-size:12px;font-weight:700;color:#eee;
+}
+.form-group input,
+.form-group select,
+.form-group textarea{
+ width:100%;padding:15px;
+ background:#090708;color:white;
+ border:1px solid #ffffff25;
+ border-radius:6px;outline:none;
+ font-family:inherit;font-size:13px;
+}
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus{border-color:var(--red)}
+.form-group textarea{height:90px;resize:vertical}
+.quantity-row{
+ display:grid;grid-template-columns:1fr 1fr;gap:15px;
+}
+.total-box{
+ background:#090708;padding:20px;
+ border-radius:7px;margin:25px 0;
+ border:1px solid #ffffff15;
+}
+.total-box p{color:#aaa;font-size:12px}
+.total-price{
+ display:block;color:var(--gold);
+ font-size:27px;font-weight:900;margin-top:8px;
+}
+.order-submit{
+ width:100%;padding:17px;border:0;
+ border-radius:6px;background:var(--red);
+ color:white;font-size:13px;font-weight:900;
+ letter-spacing:1px;cursor:pointer;transition:.3s;
+}
+.order-submit:hover{background:#e21b2a;transform:translateY(-2px)}
+.order-note{
+ color:#888;font-size:10px;
+ line-height:1.8;margin-top:15px;text-align:center;
+}
+
+/* FOOTER */
+.cta{
+ text-align:center;background:var(--red);
+ padding:80px 10%;
+}
+.cta h2{font-size:clamp(30px,5vw,48px);font-weight:900}
+.cta p{font-size:13px;margin:18px 0 30px;color:#ffe4e4}
+.cta .btn{background:#080708;color:white}
+footer{
+ padding:35px 10%;background:#050405;
+ display:flex;justify-content:space-between;
+ gap:20px;flex-wrap:wrap;
+ color:var(--muted);font-size:11px;
+}
+footer strong{color:white}
+.social a{color:var(--gold);font-weight:800}
+
+/* WHATSAPP FLOAT */
+.float-wa{
+ position:fixed;right:22px;bottom:22px;
+ width:55px;height:55px;border-radius:50%;
+ display:flex;align-items:center;justify-content:center;
+ background:#25D366;color:white;font-size:26px;
+ z-index:200;box-shadow:0 5px 20px #0008;
+}
+
+/* MOBILE */
+@media(max-width:800px){
+ nav{padding:18px 6%}
+ .menu-toggle{display:block}
+ .nav-links{
+  display:none;position:absolute;top:70px;left:0;
+  width:100%;padding:25px;background:#100b0c;
+  flex-direction:column;
+ }
+ .nav-links.active{display:flex}
+ .hero{min-height:650px;padding:130px 7% 80px}
+ section{padding:75px 7%}
+ .about{grid-template-columns:1fr;gap:35px}
+ .about-image{min-height:300px}
+ .product-grid,.features{grid-template-columns:1fr}
+ .gallery-grid{grid-template-columns:1fr 1fr}
+ .gallery-grid img{height:180px}
+ .stats{gap:20px}
+ footer{flex-direction:column}
+ .map-container iframe{height:320px}
+ .order-wrapper{padding:22px}
+ .quantity-row{grid-template-columns:1fr}
+ .map-info{flex-direction:column;align-items:flex-start}
+}
+</style>
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<nav>
+ <a href="#home" class="logo">SAMBAL <span>NERAKA.</span></a>
+ <button class="menu-toggle" onclick="toggleMenu()">☰</button>
+ <div class="nav-links" id="navLinks">
+  <a href="#home">HOME</a>
+  <a href="#about">ABOUT</a>
+  <a href="#products">PRODUCTS</a>
+  <a href="#gallery">GALLERY</a>
+  <a href="#location">LOCATION</a>
+  <a class="nav-order" href="#order">ORDER NOW ↗</a>
+ </div>
+</nav>
+
+<!-- HERO -->
+<header class="hero" id="home">
+ <div class="hero-content">
+  <div class="tag">AUTHENTIC INDONESIAN SAMBAL</div>
+  <h1>ONE TASTE.<br><span>INFINITE</span><br>SPICE.</h1>
+  <p>
+   Bukan sekadar sambal. Ini adalah perpaduan cabai,
+   rempah, dan cita rasa khas Indonesia untuk
+   pengalaman makan yang lebih istimewa.
+  </p>
+  <div class="hero-buttons">
+   <a href="#products" class="btn btn-red">EXPLORE PRODUCTS ↗</a>
+   <a href="#about" class="btn btn-outline">OUR STORY</a>
+  </div>
+ </div>
+</header>
+
+<!-- ABOUT -->
+<section class="about" id="about">
+ <div class="about-image"></div>
+ <div class="about-text">
+  <div class="section-label">OUR STORY</div>
+  <h2 class="section-title">BOLD TASTE.<br><span>REAL SPICE.</span></h2>
+  <p>
+   Sambal Neraka hadir membawa pengalaman rasa pedas
+   khas Nusantara. Kami percaya bahwa sambal bukan
+   hanya pelengkap makanan, tetapi bagian penting
+   dari kenikmatan setiap hidangan.
+  </p>
+  <p>
+   Dengan perpaduan cabai dan rempah pilihan,
+   Sambal Neraka ingin menghadirkan rasa yang
+   berkesan dalam setiap sajian.
+  </p>
+  <div class="stats">
+   <div class="stat"><strong>01</strong><small>OUR BRAND</small></div>
+   <div class="stat"><strong>100%</strong><small>PASSION</small></div>
+   <div class="stat"><strong>∞</strong><small>FLAVOR</small></div>
+  </div>
+ </div>
+</section>
+
+<!-- PRODUCTS -->
+<section class="products" id="products">
+ <div class="center">
+  <div class="section-label">OUR SIGNATURE</div>
+  <h2 class="section-title">THE SPICY COLLECTION</h2>
+  <p class="section-desc">
+   Temukan pilihan sambal dengan karakter rasa
+   yang berbeda untuk menemani hidangan favoritmu.
+  </p>
+ </div>
+
+ <div class="product-grid">
+  <article class="product-card">
+   <div class="product-photo">
+    <img src="https://images.unsplash.com/photo-1601050690597-df0568f70950?w=700" alt="Sambal bawang">
+   </div>
+   <div class="product-info">
+    <h3>Sambal Bawang</h3>
+    <p>Perpaduan bawang dan cabai dengan karakter gurih dan pedas.</p>
+    <div class="product-bottom">
+     <span class="price">Rp15.000</span>
+     <a href="#order">ORDER ↗</a>
+    </div>
+   </div>
+  </article>
+
+  <article class="product-card">
+   <div class="product-photo">
+    <img src="https://images.unsplash.com/photo-1547592180-85f173990554?w=700" alt="Sambal setan">
+   </div>
+   <div class="product-info">
+    <h3>Sambal Setan</h3>
+    <p>Karakter pedas kuat untuk penggemar sensasi cabai.</p>
+    <div class="product-bottom">
+     <span class="price">Rp18.000</span>
+     <a href="#order">ORDER ↗</a>
+    </div>
+   </div>
+  </article>
+
+  <article class="product-card">
+   <div class="product-photo">
+    <img src="https://images.unsplash.com/photo-1472476443507-c7a5948772fc?w=700" alt="Sambal tomat">
+   </div>
+   <div class="product-info">
+    <h3>Sambal Tomat</h3>
+    <p>Perpaduan tomat dan cabai dengan cita rasa segar.</p>
+    <div class="product-bottom">
+     <span class="price">Rp15.000</span>
+     <a href="#order">ORDER ↗</a>
+    </div>
+   </div>
+  </article>
+ </div>
+</section>
+
+<!-- FEATURES -->
+<section class="why">
+ <div class="center">
+  <div class="section-label">WHY SAMBAL NERAKA</div>
+  <h2 class="section-title">MORE THAN JUST SPICY</h2>
+ </div>
+ <div class="features">
+  <div class="feature">
+   <div class="icon">🌶️</div>
+   <h3>Selected Ingredients</h3>
+   <p>Mengutamakan bahan pilihan untuk menghasilkan cita rasa istimewa.</p>
+  </div>
+  <div class="feature">
+   <div class="icon">🔥</div>
+   <h3>Authentic Flavor</h3>
+   <p>Karakter rasa sambal dengan inspirasi kuliner khas Indonesia.</p>
+  </div>
+  <div class="feature">
+   <div class="icon">❤️</div>
+   <h3>Made With Passion</h3>
+   <p>Setiap produk dikembangkan dengan perhatian pada kualitas dan rasa.</p>
+  </div>
+ </div>
+</section>
+
+<!-- GALLERY -->
+<section class="gallery" id="gallery">
+ <div class="center">
+  <div class="section-label">OUR GALLERY</div>
+  <h2 class="section-title">A CLOSER LOOK</h2>
+  <p class="section-desc">Kenikmatan sambal dalam setiap sajian.</p>
+ </div>
+ <div class="gallery-grid">
+  <img src="https://images.unsplash.com/photo-1547592180-85f173990554?w=600" alt="Sajian makanan">
+  <img src="https://images.unsplash.com/photo-1472476443507-c7a5948772fc?w=600" alt="Hidangan">
+  <img src="https://images.unsplash.com/photo-1601050690597-df0568f70950?w=600" alt="Kuliner">
+ </div>
+</section>
+
+<!-- GOOGLE MAPS -->
+<section class="location" id="location">
+ <div class="section-label">FIND OUR LOCATION</div>
+ <h2 class="section-title">VISIT SAMBAL NERAKA.</h2>
+ <p class="section-desc">
+  Temukan lokasi kami di kawasan Alun-Alun Tulungagung.
+ </p>
+
+ <div class="map-container">
+  <iframe
+   src="https://maps.google.com/maps?q=Alun-Alun%20Tulungagung&t=&z=16&ie=UTF8&iwloc=&output=embed"
+   loading="lazy"
+   allowfullscreen
+   referrerpolicy="no-referrer-when-downgrade"
+   title="Google Maps Alun-Alun Tulungagung">
+  </iframe>
+
+  <div class="map-info">
+   <div>
+    <p>📍 <strong>ALUN-ALUN TULUNGAGUNG</strong></p>
+    <p>Kabupaten Tulungagung, Jawa Timur, Indonesia</p>
+   </div>
+   <a href="https://www.google.com/maps/search/?api=1&query=Alun-Alun+Tulungagung" target="_blank">
+    BUKA GOOGLE MAPS ↗
+   </a>
+  </div>
+ </div>
+</section>
+
+<!-- ORDER FORM -->
+<section class="order-section" id="order">
+ <div class="center">
+  <div class="section-label">ONLINE ORDER</div>
+  <h2 class="section-title">PLACE YOUR ORDER.</h2>
+  <p class="section-desc">
+   Pilih sambal favoritmu dan kirim pesanan
+   langsung melalui WhatsApp.
+  </p>
+ </div>
+
+ <div class="order-wrapper">
+  <h3>🌶️ Form Pemesanan</h3>
+  <p class="order-subtitle">
+   Lengkapi informasi berikut untuk melakukan pemesanan.
+  </p>
+
+  <form id="orderForm">
+   <div class="form-group">
+    <label for="customerName">Nama Pemesan</label>
+    <input type="text" id="customerName"
+     placeholder="Masukkan nama kamu" required>
+   </div>
+
+   <div class="form-group">
+    <label for="product">Pilih Produk</label>
+    <select id="product" required>
+     <option value="Sambal Bawang" data-price="15000">Sambal Bawang - Rp15.000</option>
+     <option value="Sambal Setan" data-price="18000">Sambal Setan - Rp18.000</option>
+     <option value="Sambal Tomat" data-price="15000">Sambal Tomat - Rp15.000</option>
+    </select>
+   </div>
+
+   <div class="quantity-row">
+    <div class="form-group">
+     <label for="quantity">Jumlah Pesanan</label>
+     <input type="number" id="quantity" value="1" min="1" max="100" required>
+    </div>
+
+    <div class="form-group">
+     <label for="delivery">Metode Pemesanan</label>
+     <select id="delivery">
+      <option value="Ambil sendiri">Ambil sendiri</option>
+      <option value="Pengiriman">Pengiriman</option>
+     </select>
+    </div>
+   </div>
+
+   <div class="form-group">
+    <label for="notes">Catatan Tambahan</label>
+    <textarea id="notes" placeholder="Alamat pengiriman atau catatan lainnya"></textarea>
+   </div>
+
+   <div class="total-box">
+    <p>Total Estimasi Pembayaran</p>
+    <span class="total-price" id="totalPrice">Rp15.000</span>
+   </div>
+
+   <button type="submit" class="order-submit">
+    PESAN SEKARANG VIA WHATSAPP ↗
+   </button>
+
+   <p class="order-note">
+    Pesanan akan dikirim ke WhatsApp admin untuk konfirmasi
+    ketersediaan, ongkir, dan pembayaran.
+   </p>
+  </form>
+ </div>
+</section>
+
+<!-- CTA -->
+<section class="cta">
+ <h2>READY FOR THE HEAT?</h2>
+ <p>Satu gigitan, satu pengalaman rasa yang berbeda.</p>
+ <a class="btn" href="https://wa.me/6285648547691?text=Halo%20Sambal%20Neraka!" target="_blank">
+  CHAT WHATSAPP ↗
+ </a>
+</section>
+
+<!-- FOOTER -->
+<footer>
+ <div>
+  <strong>SAMBAL NERAKA.</strong><br><br>
+  THE AUTHENTIC TASTE OF SPICY.
+ </div>
+ <div class="social">
+  <a href="https://www.instagram.com/k_apiddd/" target="_blank">
+   INSTAGRAM @K_APIDDD ↗
+  </a>
+ </div>
+ <div>© 2026 SAMBAL NERAKA. ALL RIGHTS RESERVED.</div>
+</footer>
+
+<!-- FLOATING WHATSAPP -->
+<a class="float-wa"
+ href="https://wa.me/6285648547691?text=Halo%20Sambal%20Neraka!"
+ target="_blank" aria-label="WhatsApp">
+ ☎
+</a>
+
+<script>
+/* MOBILE NAVBAR */
+function toggleMenu(){
+ document.getElementById("navLinks").classList.toggle("active");
+}
+
+document.querySelectorAll(".nav-links a").forEach(link=>{
+ link.addEventListener("click",()=>{
+  document.getElementById("navLinks").classList.remove("active");
+ });
+});
+
+/* ORDER CALCULATOR */
+const productSelect=document.getElementById("product");
+const quantityInput=document.getElementById("quantity");
+const totalPrice=document.getElementById("totalPrice");
+
+function updateTotal(){
+ const selected=productSelect.options[productSelect.selectedIndex];
+ const price=Number(selected.dataset.price);
+ const quantity=Math.min(100,Math.max(1,Number(quantityInput.value)||1));
+
+ totalPrice.textContent=(price*quantity).toLocaleString("id-ID",{
+  style:"currency",
+  currency:"IDR",
+  maximumFractionDigits:0
+ });
+}
+
+productSelect.addEventListener("change",updateTotal);
+quantityInput.addEventListener("input",updateTotal);
+
+/* WHATSAPP ORDER */
+document.getElementById("orderForm").addEventListener("submit",function(e){
+ e.preventDefault();
+
+ const name=document.getElementById("customerName").value.trim();
+ const product=productSelect.value;
+ const price=Number(productSelect.options[productSelect.selectedIndex].dataset.price);
+ const quantity=Number(quantityInput.value);
+ const delivery=document.getElementById("delivery").value;
+ const notes=document.getElementById("notes").value.trim();
+
+ if(!name||!Number.isInteger(quantity)||quantity<1||quantity>100){
+  alert("Periksa kembali nama dan jumlah pesanan.");
+  return;
+ }
+
+ const total=price*quantity;
+
+ const message=
+ `🔥 *PESANAN BARU - SAMBAL NERAKA* 🔥\n\n`+
+ `Nama: ${name}\n`+
+ `Produk: ${product}\n`+
+ `Harga: Rp${price.toLocaleString("id-ID")}\n`+
+ `Jumlah: ${quantity}\n`+
+ `Total: Rp${total.toLocaleString("id-ID")}\n`+
+ `Metode: ${delivery}\n`+
+ `Catatan: ${notes||"-"}\n\n`+
+ `Halo Sambal Neraka, saya ingin mengonfirmasi pesanan ini.`;
+
+ const whatsapp="6285648547691";
+ const url="https://wa.me/"+whatsapp+"?text="+encodeURIComponent(message);
+
+ window.open(url,"_blank");
+});
+
+updateTotal();
+</script>
+
+</body>
+</html>
